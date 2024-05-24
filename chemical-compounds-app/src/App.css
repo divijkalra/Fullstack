@@ -84,3 +84,98 @@ button:hover {
   margin-bottom: 20px;
   border-radius: 5px;
 }
+
+/* src/pages/CompoundPage.css */
+.compound-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compound-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-link {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.edit-link:hover {
+  background-color: #0056b3;
+}
+
+/* src/components/EditCompound.css */
+.edit-compound-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-compound-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.edit-compound-form input,
+.edit-compound-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-compound-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.edit-compound-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.edit-compound-form button:hover {
+  background-color: #0056b3;
+}
+
+.compound-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  /* Adjusted to make the image smaller */
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
+}
+
+.compound-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the container */
+  border-radius: 8px;
+}

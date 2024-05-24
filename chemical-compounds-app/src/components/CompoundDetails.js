@@ -24,10 +24,23 @@ function CompoundDetails() {
 
     return (
         <div className="container compound-details">
-            <h1>{compound.CompoundName}</h1>
-            <img src={compound.strImageSource} alt={compound.CompoundName} />
-            <p>{compound.CompoundDescription}</p>
-            <p><strong>Image Attribution:</strong> {compound.strImageAttribution}</p>
+            <h1>{compound.CompoundName}</h1> 
+            <div className="compound-image-wrapper">
+                <img src={compound.strImageSource} alt={compound.CompoundName}  />
+            </div>           
+           <p>{compound.CompoundDescription}</p>
+            <p>
+                <strong>Image Attribution:</strong>
+                <a
+                    href={compound.strImageAttribution}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'blue' }}
+                >
+                    {compound.strImageAttribution}
+                </a>
+            </p>
+
         </div>
     );
 }

@@ -34,7 +34,7 @@ function EditCompound() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="edit-compound-form">
             <label>
                 Name:
                 <input

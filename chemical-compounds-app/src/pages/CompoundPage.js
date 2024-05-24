@@ -18,11 +18,11 @@ function CompoundPage() {
     };
 
     return (
-        <div>
+        <div className="compound-page-container">
             {compound ? (
-                <div>
+                <div className="compound-details-container">
                     <CompoundDetails compound={compound} />
-                    <Link to={`/compound/${id}/edit`}>Edit</Link>
+                    <Link to={`/compound/${id}/edit`} className="edit-link">Edit</Link>
                 </div>
             ) : (
                 <p>Loading...</p>
