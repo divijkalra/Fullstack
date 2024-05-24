@@ -179,3 +179,12 @@ button:hover {
   /* Maintain aspect ratio and cover the container */
   border-radius: 8px;
 }
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+}

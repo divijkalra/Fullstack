@@ -6,7 +6,7 @@ import CompoundList from '../components/CompoundList';
 function Home() {
     const [compounds, setCompounds] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
+    const compoundsPerPage = 6;
 
     useEffect(() => {
         fetchCompounds();
@@ -18,24 +18,30 @@ function Home() {
             console.log("API Response:", response.data); // Add this line
 
             setCompounds(response.data);
-            setTotalPages(response.data.length);
+
         } catch (error) {
             console.error("Failed to fetch compounds:", error);
         }
     };
-
+    const indexOfLastCompound = currentPage * compoundsPerPage;
+    const indexOfFirstCompound = indexOfLastCompound - compoundsPerPage;
+    const currentCompounds = compounds.slice(indexOfFirstCompound, indexOfLastCompound);
+    const totalPages = Math.ceil(compounds.length / compoundsPerPage);
+    const handlePageClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
     return (
         <div className="container">
-            <h1>Compounds</h1>
-            <CompoundList compounds={compounds} />
-            <div>
+            <h1 className="center-heading">Compounds</h1>
+            <CompoundList compounds={currentCompounds} />
+            <div className="pagination">
                 {Array.from({ length: totalPages }, (_, i) => (
-                    <button key={i} onClick={() => setCurrentPage(i + 1)}>
+                    <button key={i} onClick={() => handlePageClick(i + 1)}>
                         {i + 1}
                     </button>
                 ))}
             </div>
-        </div >
+        </div>
     );
 }
 
